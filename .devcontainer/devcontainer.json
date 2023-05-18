@@ -1,0 +1,41 @@
+{
+  "name": "semantic-search",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "vscode",
+  "shutdownAction": "stopCompose",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [],
+  "initializeCommand": [".devcontainer/docker-init"],
+  "postCreateCommand": "yarn",
+  "postStartCommand": "",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "matthewpi.caddyfile-support",
+        "ms-azuretools.vscode-docker",
+        "orta.vscode-jest",
+        "rangav.vscode-thunder-client",
+        "tamasfe.even-better-toml",
+        "mikestead.dotenv",
+        "esbenp.prettier-vscode",
+        "rbbit.typescript-hero",
+        "aaron-bond.better-comments",
+        "github.copilot",
+        "GitHub.vscode-pull-request-github",
+        "stripe.vscode-stripe",
+        "denoland.vscode-deno"
+      ]
+    }
+  }
+}

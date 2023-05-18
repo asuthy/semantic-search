@@ -1,0 +1,36 @@
+version: "3.8"
+
+volumes:
+  vscode-extensions:
+    external: true
+  thunder-client:
+    external: true
+
+services:
+  vscode:
+    init: true
+    build:
+      context: ..
+      args:
+        - VARIANT=${NODE_VERSION:-16}-${OS_VERSION:-bullseye}
+        - FLAVOUR=${BASE_LANGUAGE:-typescript}
+      dockerfile: .devcontainer/Dockerfile
+    command: sleep infinity
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION
+      - COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME:-ai-search}
+      - HOME_ABSOLUTE_PATH=$HOME
+    networks:
+      - default
+    ports:
+      - "54423:54323"
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ..:/workspace:cached
+      - ~/.ssh:/root/.ssh
+      - vscode-extensions:/root/.vscode-server/extensions
+      - thunder-client:/root/.vscode-server/data/User/globalStorage/rangav.vscode-thunder-client

@@ -1,0 +1,23 @@
+{
+  "name": "copyfuse",
+  "version": "0.0.0",
+  "packageManager": "yarn@3.5.1",
+  "private": true,
+  "author": "PCS-Publishing",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.22.0",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@types/prettier": "^2",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.2"
+  }
+}
